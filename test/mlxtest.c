@@ -190,15 +190,20 @@ int main(void)
     // printf("OK\n");
     // sleep(5);
 
-    for (int i = 0; i < 150; i++) {
+    for (int i = 0; i < 50; i++) {
         y0 = rand() % WIN1_SY;
         x0 = rand() % WIN1_SX;
         y1 = rand() % WIN1_SY;
         x1 = rand() % WIN1_SX;		
-		color = rand() % 0xFFFFFF; // Random value between 0 and 0xFFFFFF (24-bit color)
+		// color = rand() % 0x100000000; // color plus alpha
+		color = 0x7F0000FF;
+		// color = rand() % 0xFFFFFF; // Random value between 0 and 0xFFFFFF (24-bit color)
         // bresenham(win1, x0, y0, x1, y1, color);
+		dda_antialiased(win1, x0+1, y0+1, x1+1, y1+1, color);
+		dda_antialiased(win1, x0+2, y0+2, x1+2, y1+2, color);
+		dda_antialiased(win1, x0+3, y0+3, x1+3, y1+3, color);
 		dda_antialiased(win1, x0, y0, x1, y1, color);
-		dda(win1, x0, y0, x1, y1, color);
+		
     }
 	sleep(25);
 }

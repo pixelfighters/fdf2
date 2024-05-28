@@ -7,8 +7,8 @@ UNAME := $(shell uname)
 
 CFLAGS= -I$(INC) -O3 -I.. -g
 
-NAME= mlxtest
-SRC = mlxtest.c
+NAME= basicmlx
+SRC = basicmlx.c
 OBJ = $(SRC:%.c=%.o)
 
 LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm
