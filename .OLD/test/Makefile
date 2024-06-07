@@ -1,7 +1,7 @@
 # Paths
 INC = ./libft/includes
 LIBFT_DIR = ./libft
-MINILIBX_DIR = ./libmlx
+MINILIBX_DIR = ../lib
 X11_LIB_DIR = /usr/X11/lib
 
 # Compiler and Flags
@@ -20,8 +20,8 @@ else
 endif
 
 # Project Files
-NAME = linetest
-SRC = linetest.c
+NAME = aureltest
+SRC = aureltest.c
 OBJ = $(SRC:.c=.o)
 
 # Targets
