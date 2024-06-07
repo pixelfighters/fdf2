@@ -1,5 +1,5 @@
+INC=/usr/include
 
-INC=%%%%
 
 INCLIB=$(INC)/../lib
 
@@ -7,8 +7,8 @@ UNAME := $(shell uname)
 
 CFLAGS= -I$(INC) -O3 -I.. -g
 
-NAME= mlx-test
-SRC = main.c
+NAME= aureltest
+SRC = aureltest.c
 OBJ = $(SRC:%.c=%.o)
 
 LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm -lft
@@ -26,6 +26,7 @@ else
 endif
 
 all: $(NAME)
+	./$(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LFLAGS)

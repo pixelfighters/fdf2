@@ -1,46 +1,44 @@
-INC=/usr/include
+# Paths
+INC = ./libft/includes
+LIBFT_DIR = ./libft
+MINILIBX_DIR = ../lib
+X11_LIB_DIR = /usr/X11/lib
 
-
-INCLIB=$(INC)/../lib
-
+# Compiler and Flags
 UNAME := $(shell uname)
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -I$(INC) -I$(LIBFT_DIR) -I$(MINILIBX_DIR) -O3 -g
+LFLAGS = -L$(LIBFT_DIR) -lft -L$(MINILIBX_DIR) -lmlx -L$(X11_LIB_DIR) -lXext -lX11 -lm
 
-CFLAGS= -I$(INC) -O3 -I.. -g
-
-NAME= basicmlx
-SRC = basicmlx.c
-OBJ = $(SRC:%.c=%.o)
-
-LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm
-
+# Adjust LFLAGS for non-macOS systems
 ifeq ($(UNAME), Darwin)
-	# mac
-	CC = clang
+    CC = clang
 else ifeq ($(UNAME), FreeBSD)
-	# FreeBSD
-	CC = clang
+    CC = clang
 else
-	#Linux and others...
-	CC	= gcc
-	LFLAGS += -lbsd
+    LFLAGS += -lbsd
 endif
 
+# Project Files
+NAME = aureltest
+SRC = aureltest.c
+OBJ = $(SRC:.c=.o)
+
+# Targets
 all: $(NAME)
-	./$(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(LFLAGS)
+$(NAME): $(OBJ) $(LIBFT_DIR)/libft.a
+	$(CC) $(OBJ) -o $@ $(LFLAGS)
 
-show:
-	@printf "UNAME		: $(UNAME)\n"
-	@printf "NAME  		: $(NAME)\n"
-	@printf "CC		: $(CC)\n"
-	@printf "CFLAGS		: $(CFLAGS)\n"
-	@printf "LFLAGS		: $(LFLAGS)\n"
-	@printf "SRC		:\n	$(SRC)\n"
-	@printf "OBJ		:\n	$(OBJ)\n"
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(NAME) $(OBJ) *~ core *.core
+	rm -f $(OBJ) $(NAME)
 
-re: clean all
+fclean: clean
+	rm -f $(LIBFT_DIR)/*.o
+
+re: fclean all
+
+.PHONY: all clean fclean re
