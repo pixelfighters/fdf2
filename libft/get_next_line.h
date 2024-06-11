@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fschuh <fschuh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kami <kami@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:29:58 by fschuh            #+#    #+#             */
-/*   Updated: 2024/05/23 16:42:43 by fschuh           ###   ########.fr       */
+/*   Updated: 2024/06/11 13:54:03 by kami             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_string(char *str);
 char	*read_the_line(char *str);
 char	*free_and_null(char *buff1, char *buff2);
 size_t	ft_strlen(const char *str);
-char	*ft_strchr(const char *str, int c);
+// char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 char	*ft_strjoin(char *s1, char *s2);
 

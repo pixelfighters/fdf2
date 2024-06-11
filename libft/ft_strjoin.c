@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fschuh <fschuh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kami <kami@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:22:27 by fschuh            #+#    #+#             */
-/*   Updated: 2024/05/24 10:30:11 by fschuh           ###   ########.fr       */
+/*   Updated: 2024/06/11 12:46:49 by kami             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*ft_gnl_strjoin(char *buffer, char *content)
 				+ ft_strlen(content)) + 1);
 	if (!result)
 		return (NULL);
-	
 	while (buffer && buffer[i])
 	{
 		result[i] = buffer[i];
@@ -40,7 +39,6 @@ char	*ft_gnl_strjoin(char *buffer, char *content)
 	free(buffer);
 	return (result);
 }
-
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -64,8 +62,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*returnstring = '\0';
 	return (start);
 }
-
-
-
-
-

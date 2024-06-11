@@ -7,7 +7,8 @@ SOURCES = \
 	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putnbr_rlen.c ft_putnbr_unsigned_rlen.c ft_putnbr_hex_rlen.c ft_putptr_rlen.c ft_putstr.c \
-	ft_putendl_fd.c ft_putnbr_fd.c ft_printf.c get_next_line.c get_next_line_utils.c  ft_asciiart.c \
+	ft_putendl_fd.c ft_putnbr_fd.c ft_printf.c get_next_line.c get_next_line_utils.c ft_asciiart.c \
+	ft_errhandle.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 

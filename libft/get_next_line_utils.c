@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fschuh <fschuh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kami <kami@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 10:20:24 by kami              #+#    #+#             */
-/*   Updated: 2024/05/23 17:15:12 by fschuh           ###   ########.fr       */
+/*   Updated: 2024/06/11 13:54:53 by kami             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strchr(const char *str, int c)
+/* char	*ft_strchr(const char *str, int c)
 {
 	size_t	i;
 
@@ -40,7 +40,7 @@ char	*ft_strchr(const char *str, int c)
 	if ((char)c == '\0')
 		return ((char *)&str[i]);
 	return (NULL);
-}
+} */
 
 int	ft_is_binary(char *buffer, ssize_t read_bytes)
 {

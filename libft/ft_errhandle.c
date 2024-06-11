@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_errhandle.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kami <kami@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:32:24 by fschuh            #+#    #+#             */
-/*   Updated: 2024/06/11 12:47:32 by kami             ###   ########.fr       */
+/*   Created: 2024/06/11 11:54:34 by kami              #+#    #+#             */
+/*   Updated: 2024/06/11 16:01:47 by kami             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_errhandle(char *error_msg)
 {
-	size_t	i;
-
-	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i])
-	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
-		i++;
-	}
-	if ((char)c == '\0')
-		return ((char *)&str[i]);
-	return (NULL);
+	write(STDERR_FILENO, KRED, 6);
+	write(STDERR_FILENO, "Error: ", 7);
+	write(STDERR_FILENO, KNRM, 5);
+	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
+	write(STDERR_FILENO, "\n", 1);
+	exit(EXIT_FAILURE);
 }

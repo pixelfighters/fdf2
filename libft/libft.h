@@ -6,7 +6,7 @@
 /*   By: kami <kami@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 09:59:49 by fschuh            #+#    #+#             */
-/*   Updated: 2024/06/07 18:44:44 by kami             ###   ########.fr       */
+/*   Updated: 2024/06/11 13:16:12 by kami             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@
 #  define BUFFER_SIZE 42
 # endif
 
-#define KNRM "\x1B[0m"
-#define KRED "\x1B[31m"
-#define KGRN "\x1B[32m"
-#define KYEL "\x1B[33m"
-#define KBLU "\x1B[34m"
-#define KMAG "\x1B[35m"
-#define KCYN "\x1B[36m"
-#define KWHT "\x1B[37m"
+# define KNRM "\x1B[0m"
+# define KRED "\x1B[31m"
+# define KGRN "\x1B[32m"
+# define KYEL "\x1B[33m"
+# define KBLU "\x1B[34m"
+# define KMAG "\x1B[35m"
+# define KCYN "\x1B[36m"
+# define KWHT "\x1B[37m"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -68,7 +68,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
-void	ft_print_ascii_art(char teststring[26], char color[], int fd);
+void	ft_print_ascii_art(char *teststring, char *color, int fd);
 int		ft_putchar(char c);
 int		ft_putnbr_rlen(int n, int rlen);
 int		ft_putnbr_unsigned_rlen(unsigned int n, int rlen);
@@ -77,7 +77,6 @@ int		ft_putstr(char *s);
 int		ft_putptr_rlen(void *ptr);
 
 int		ft_printf(const char *format, ...);
-
 
 char	*get_next_line(int fd);
 char	*get_string(char *str);
@@ -88,5 +87,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 char	*ft_gnl_strjoin(char *buffer, char *content);
 char	*ft_strjoin(char const *s1, char const *s2);
+
+void	ft_errhandle(char *error_msg);
 
 #endif
